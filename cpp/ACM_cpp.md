@@ -41,3 +41,101 @@ int main() {
     }
 }
 ```
+
+# 4. A+B问题IV 
+[题目链接](https://kamacoder.com/problempage.php?pid=1003) 
+
+```CPP
+#include<iostream>
+using namespace std;
+int main(){
+    int n, a;
+    while (cin >> n) {
+        if (n == 0) break;
+        int sum = 0;
+        while (n--) {
+            cin >> a;
+            sum += a;
+        }
+        cout << sum << endl;
+    }
+}
+```
+
+错误案例分析：
+```cpp
+#include <iostream>
+using namespace std;
+
+int main(){
+    int N;
+    int input;
+    while(cin >> N){
+        if(N == 0) break;
+        int sum = 0;
+        while(N--){
+            while(cin >> input) sum += input;    // ××××××××
+        }
+        cout << sum << endl;
+    }
+}
+```
+上述代码中，使用while接收input的输入，是不合理的。
+因为cin后面跟随几个变量，就会接收几个输入，多余的输入会丢失。
+例如以下代码：
+```cpp
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a;
+    cin >> a;
+    cout << a << endl;
+}
+```
+```
+---------------------
+输入： 1 2 3 4 5 6
+输出： 1
+---------------------
+输入：3 4
+输出：3
+---------------------
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
