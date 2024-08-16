@@ -191,16 +191,19 @@ int main() {
         }
         int average = sum / n;
         int result = 0;
-        // 这一段写法
+        // 这一段写法有两种
+        // ------------写法1------------
         for (int i = 0; i < n; i++) {
             if ((nums[i] - average) > 0) result += (nums[i] - average);
         }
+        // -----------------------------
         /*
-        // 或者写成以下这样
+        // ------------写法2------------
         for(int num: nums){
             if(num > avg) result += num - avg;
         }
         */
+        // -----------------------------
         cout << result << endl;
         cout<< endl;
     }
