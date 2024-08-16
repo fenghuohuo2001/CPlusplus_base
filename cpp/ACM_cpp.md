@@ -138,7 +138,7 @@ int main() {
 }
 ```
 
-# 7.平均绩点 
+# 7.平均绩点 （注意代码格式， 如： if中的 “;” 位置）
 [题目链接](https://kamacoder.com/problempage.php?pid=1006)
 
 ```CPP
@@ -171,8 +171,41 @@ int main() {
 }
 ```
 
+# 8. 摆平积木 
+[题目链接](https://kamacoder.com/problempage.php?pid=1007) 
 
+```CPP 
+#include<iostream>
+#include<vector>
+using namespace std;
 
+int main() {
+    int n;
+    while (cin >> n) {
+        if (n == 0) break;
+        vector<int> nums = vector<int>(n, 0);
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            cin >> nums[i];
+            sum += nums[i];
+        }
+        int average = sum / n;
+        int result = 0;
+        // 这一段写法
+        for (int i = 0; i < n; i++) {
+            if ((nums[i] - average) > 0) result += (nums[i] - average);
+        }
+        /*
+        // 或者写成以下这样
+        for(int num: nums){
+            if(num > avg) result += num - avg;
+        }
+        */
+        cout << result << endl;
+        cout<< endl;
+    }
+}
+```
 
 
 
