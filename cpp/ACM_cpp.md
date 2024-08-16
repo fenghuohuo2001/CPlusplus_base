@@ -103,15 +103,73 @@ int main(){
 ---------------------
 ```
 
+# 5. A+B问题VII 
+[题目链接](https://kamacoder.com/problempage.php?pid=1004) 
 
+```CPP
+#include<iostream>
+using namespace std;
+int main() {
+    int a, b;
+    while (cin >> a >> b) cout << a + b << endl << endl;
+}
+```
 
+# 6. A+B问题VIII （ac）
+[题目链接](https://kamacoder.com/problempage.php?pid=1005)
 
+```CPP 
+#include<iostream>
+using namespace std;
+int main() {
+    int n, a, b;
+    while (cin >> n) {
+        while (n--) {
+            cin >> a;
+            int sum = 0;
+            while (a--) {
+                cin >> b;
+                sum += b;
+            }
+            cout << sum << endl;
+            if (n != 0) cout << endl;
+        }
+    }
+}
+```
 
+# 7.平均绩点 
+[题目链接](https://kamacoder.com/problempage.php?pid=1006)
 
-
-
-
-
+```CPP
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main() {
+    string s;
+    // int flag = 1;     // 若将flag定义在这里，则每行不会重置flag的值。
+    while (getline(cin, s)) { // 接受一整行字符串
+        float sum = 0;
+        int count = 0;
+        int flag = 1;
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] == 'A') {sum += 4; count++;}
+            else if (s[i] == 'B') {sum += 3; count++;}
+            else if (s[i] == 'C') {sum += 2; count++;}
+            else if (s[i] == 'D') {sum += 1; count++;}
+            else if (s[i] == 'F') {sum += 0; count++;}
+            else if (s[i] == ' ') continue;
+            else {
+                flag = 0;
+                cout << "Unknown" << endl;
+                break;
+            }
+        }
+        if (flag) printf("%.2f\n", sum / count);
+    }
+    return 0;
+}
+```
 
 
 
